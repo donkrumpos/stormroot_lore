@@ -1,0 +1,249 @@
+---
+id: element-moon
+type: element
+title: "Moon — Illusion"
+scope: canon
+visibility: public
+status: active
+confidence: high
+tags:
+  - element
+  - moon
+  - illusion
+  - secrecy
+aliases:
+  - Veilborn Light
+  - The Lantern of Secrets
+  - Night’s Unraveling
+  - Mistress of Reflections
+created: 2025-01-18
+last_reviewed: 2025-01-18
+links:
+  town: moondrift
+  dungeon: gloamsorrow
+  deity: nailune
+  opposite: storm-valor
+  narrative_domain: illusion
+---
+
+# Mythic Introduction
+Moon is not darkness —  
+it is **the soft light that asks questions daylight is too proud to ask**.
+
+It reveals by obscuring,  
+clarifies by confusing,  
+and teaches by leading wanderers through dreams  
+where truth wears a thousand comfortable masks.
+
+Illusion, in the lunar sense, is not deception.  
+It is *possibility* — the shimmering awareness  
+that the world is stranger, wider, and more permeable than mortals pretend.
+
+Moon is the **inner night**, the whisper of  
+“this too might be true,”  
+a teacher of intuition and the hidden paths between waking and dreaming.
+
+Where Sun is revelation, Moon is **revelation-without-demand**:  
+a gentle unravelling of certainty.
+
+---
+
+# Elemental Attributes
+**Core Nature:** Reverie, ambiguity, hidden truths  
+**Virtue:** Insight  
+**Vice (Distorted):** Paralysis through doubt, delusion  
+**Emotional Tone:** Dreamlike curiosity, soft grief, haunting beauty  
+**Seasonal Phase:** The Long Nightfall  
+**Material Expression:** Mirrorstone, pale opals, memory-silver  
+**Color:** Violet-white, pale blue, dusk grey  
+**Sound:** Distant bells, soft chiming glass, the echo of one’s own footsteps
+
+---
+
+# Narrative Domain: Illusion
+Moon governs:
+- dreams and subconscious memory  
+- lost or half-remembered truths  
+- disguises that reveal more than they hide  
+- uncanny encounters  
+- liminal spaces where nothing fully resolves  
+
+It influences:
+- characters who second-guess or question meaning  
+- scenes where reality feels thin  
+- quests involving divination, prophecy, or waking visions  
+
+Moon stories often:
+- begin in confusion  
+- deepen into introspection  
+- resolve with a whisper of clarity rather than a shout
+
+Illusion is not trickery —  
+it is the **space between what is and what might be**.
+
+---
+
+# Town Alignment: Moondrift (Virtue: Insight)
+Moondrift sits on an elevated plateau of pale stone,  
+a place where moonlight lingers even at midday.  
+Fog rolls through its alleys like sleepwalking animals,  
+and lanterns burn with silver-wicked flame.
+
+People of Moondrift:
+- speak softly, but with layers of meaning  
+- keep journals of their dreams and compare them during festivals  
+- trust intuition as much as logic  
+- consider “what the moon showed me” a legitimate argument  
+
+When Moon dominates Moondrift:
+- reflections behave independently  
+- cats gather at crossroads as if expecting someone  
+- children speak in prophetic riddles  
+- lanterns brighten when someone tells the truth  
+- strange footprints appear on rooftops at dawn  
+
+Moondrift is a town where  
+**the unseen is always just slightly seen**.
+
+---
+
+# Dungeon Alignment: Gloamsorrow (Illusion Manifest)
+Gloamsorrow is the dungeon where **light doubts itself**.
+
+Formed where a tear in the Night Weave slipped too close to mortal soil,  
+it is a labyrinth of reflective halls,  
+moonlit chambers, and corridors that rearrange based on memory.
+
+Gloamsorrow is known for:
+- rooms that replay past choices  
+- illusions that expose deeper truths rather than mislead  
+- puzzles requiring intuition over logic  
+- enemies that flicker between forms based on fear  
+- echoes that sometimes answer differently than the speaker  
+
+Dungeon mutations under high Moon influence:
+- walls become semi-transparent, showing “possible” rooms  
+- illusions become literal paths  
+- bosses gain dreamlike attack patterns  
+- forgotten or suppressed memories manifest as enemies  
+
+Gloamsorrow does not try to kill intruders.  
+It tries to **wake them**.
+
+---
+
+# Deity Alignment: Nailune, Weaver of Veils
+**Titles:**  
+- Lady of the Second Reflection  
+- The Silver-Bound Lantern  
+- Dream-Thread Weaver  
+- She Who Knows the True Name of Shadows  
+
+Nailune appears as a tall, serene figure  
+with a mask that shifts expressions when unobserved,  
+her cloak a tapestry of incomplete dreams.
+
+She teaches:
+- introspection  
+- humility before the unknown  
+- the value of uncertainty  
+- that insight is born from patience, not force  
+
+She dislikes:
+- those who demand certainty  
+- truths spoken carelessly  
+- illusions used for cruelty  
+
+Signs of her attention:
+- a faint second shadow  
+- candles extinguishing at meaningful moments  
+- hearing your name spoken softly from behind  
+- ripples in still water despite no disturbance  
+
+Her guidance arrives as:
+- riddles  
+- dreams  
+- half-remembered songs  
+- calm in the moments before despair
+
+---
+
+# Environmental Effects (Procedural Hooks)
+When Moon influences a region:
+- paths shift subtly overnight  
+- rumors become unusually accurate  
+- forgotten lore surfaces  
+- illusions manifest physically  
+- animals behave as if they see invisible things  
+
+Moon amplifies:
+- secrets  
+- hunches  
+- symbolic events  
+- prophetic dreams  
+- uncanny coincidences  
+
+It weakens:
+- rigid logic  
+- structured routines  
+- brute-force approaches  
+
+---
+
+# NPC Archetypes (System-Usable)
+Moon-aligned NPCs:
+- dream-scribes  
+- illusionists  
+- crescent monks  
+- mask-makers  
+- wandering soothsayers  
+- night archivists  
+
+Personality traits:
+- indirect speech  
+- a tendency toward metaphor  
+- unsettling calm  
+- patient listening  
+- reverence for dreams  
+
+Common Moondrift saying:  
+**“Truth waits where shadows meet.”**
+
+---
+
+# Quest Seeds (Procedural-Ready)
+1. **The Lantern That Follows**  
+   A glowing lantern begins accompanying a villager, illuminating their hidden regrets.
+
+2. **Dreams That Spill Into Streets**  
+   Fog thickens and starts whispering dreams aloud; players must discern whose dreams they are.
+
+3. **The Mask That Tells the Truth**  
+   A ceremonial mask refuses to come off once worn — until the wearer speaks the truth they’ve avoided.
+
+4. **The Forgotten Door**  
+   A new door appears between two houses each night but leads somewhere different each time.
+
+---
+
+# Shrine Behavior
+Shrines to Moon manifest understated but eerie phenomena:
+- offerings disappear with no sound  
+- moonlight pools unnaturally even indoors  
+- reflections show symbolic rather than literal images  
+- incense smoke curls into words before dissipating  
+
+Corruption symptoms (Delusion):
+- reflections argue with their owners  
+- illusions persist too long  
+- mental fog, indecision  
+- prophetic dreams replaced by nightmares that *feel* significant but are empty  
+
+---
+
+# Canonical Truths
+- Moon is not deception — it is possibility.  
+- Moondrift lives in harmony with the half-seen world.  
+- Gloamsorrow reveals truth through dreams and uncertainty.  
+- Nailune guides through riddles, not commands.  
+- Illusion is the softest and most dangerous form of truth.

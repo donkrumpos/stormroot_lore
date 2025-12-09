@@ -1,9 +1,4 @@
-#!/usr/bin/env python3
-# Generates generation/prompts/system/shrine-generator.md
-
-import os
-
-content = r"""\
+\
 ---
 id: shrine-generator
 type: system-prompt
@@ -224,12 +219,3 @@ Practices should feel like real, lived culture, not just game mechanics.
 This system prompt defines how shrines act as **mythic routers** in Deluvia’s spiritual network.  
 The template defines the shape.  
 The world and the players will determine how each shrine is remembered.
-"""
-
-os.makedirs("generation/prompts/system", exist_ok=True)
-output_path = "generation/prompts/system/shrine-generator.md"
-
-with open(output_path, "w") as f:
-    f.write(content)
-
-print(f"Generated: {output_path}")
