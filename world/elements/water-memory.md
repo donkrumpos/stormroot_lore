@@ -23,6 +23,21 @@ links:
   deity: myrathe
   opposite: fire-transformation
   narrative_domain: memory
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - moon
+    - death
+  opposition:
+    - fire
+  catalysts:
+    - death
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/water.md
+  dungeon_affinity:
+    - ../dungeons/water-aligned-dungeons.md
 ---
 
 # Mythic Introduction

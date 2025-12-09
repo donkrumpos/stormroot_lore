@@ -24,6 +24,21 @@ links:
   deity: eirundal
   opposite: soil-humility
   narrative_domain: chance
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - poison
+    - ore
+  opposition:
+    - soil
+  catalysts:
+    - wind
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/chaos.md
+  dungeon_affinity:
+    - ../dungeons/chaos-aligned-dungeons.md
 ---
 
 # Mythic Introduction

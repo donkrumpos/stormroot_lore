@@ -24,6 +24,21 @@ links:
   deity: umbryx
   opposite: life-growth
   narrative_domain: closure
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - moon
+    - water
+  opposition:
+    - sun
+  catalysts:
+    - water
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/death.md
+  dungeon_affinity:
+    - ../dungeons/death-aligned-dungeons.md
 ---
 
 # Mythic Introduction

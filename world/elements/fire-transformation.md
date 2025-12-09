@@ -23,6 +23,22 @@ links:
   deity: solkara
   opposite: water-memory
   narrative_domain: transformation
+
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - life
+    - sun
+  opposition:
+    - water
+  catalysts:
+    - storm
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/fire.md
+  dungeon_affinity:
+    - ../dungeons/fire-aligned-dungeons.md
 ---
 
 # Mythic Introduction

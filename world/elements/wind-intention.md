@@ -24,6 +24,21 @@ links:
   deity: aeralune
   opposite: storm-valor
   narrative_domain: intention
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - soil
+    - storm
+  opposition:
+    - ore
+  catalysts:
+    - chaos
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/wind.md
+  dungeon_affinity:
+    - ../dungeons/wind-aligned-dungeons.md
 ---
 
 # Mythic Introduction

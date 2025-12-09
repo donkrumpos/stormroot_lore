@@ -24,6 +24,21 @@ links:
   deity: khel-druun
   opposite: life-growth
   narrative_domain: craft
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - poison
+    - chaos
+  opposition:
+    - wind
+  catalysts:
+    - sun
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/ore.md
+  dungeon_affinity:
+    - ../dungeons/ore-aligned-dungeons.md
 ---
 
 # Mythic Introduction

@@ -24,6 +24,21 @@ links:
   deity: nailune
   opposite: storm-valor
   narrative_domain: illusion
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - water
+    - death
+  opposition:
+    - storm
+  catalysts:
+    - poison
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/moon.md
+  dungeon_affinity:
+    - ../dungeons/moon-aligned-dungeons.md
 ---
 
 # Mythic Introduction

@@ -23,6 +23,21 @@ links:
   deity: serith-noxbloom
   opposite: life-growth
   narrative_domain: corruption
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - chaos
+    - ore
+  opposition:
+    - life
+  catalysts:
+    - moon
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/poison.md
+  dungeon_affinity:
+    - ../dungeons/poison-aligned-dungeons.md
 ---
 
 # Mythic Introduction

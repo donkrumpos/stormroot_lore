@@ -23,6 +23,21 @@ links:
   deity: terragorn
   opposite: air-intention
   narrative_domain: humility
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - storm
+    - wind
+  opposition:
+    - chaos
+  catalysts:
+    - life
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/soil.md
+  dungeon_affinity:
+    - ../dungeons/soil-aligned-dungeons.md
 ---
 
 # Mythic Introduction

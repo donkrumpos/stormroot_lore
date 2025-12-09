@@ -1,18 +1,18 @@
 ---
-id: twelve-elements
+id: twelve-elements-interaction-matrix
 type: system
-title: "The Twelve Elements of Deluvia"
+title: "Twelvefold Element Interaction Model"
 scope: internal
 visibility: internal
 status: active
 confidence: high
-created: 2025-01-17
-last_reviewed: 2025-01-17
+created: 2025-01-18
+last_reviewed: 2025-01-18
 tags:
   - elements
-  - metaphysics
-  - design
-  - narrative-system
+  - narrative
+  - generation
+  - system
 links:
   related:
     - mythic-vector-system
@@ -21,456 +21,228 @@ links:
     - dungeon-mutation-engine
 ---
 
-# The Twelve Elements of Deluvia
+# Twelvefold Element Interaction Model
 
-## Mythic Introduction
+The Twelvefold is not just a flavor wheel for Deluvia.
+It is the grammar beneath the world: a way for me to describe how elements
+support, oppose, and transform one another in story, mechanics, and procedural
+generation.
 
-Deluvia is stitched together from twelve great currents.  
-They are not just “damage types” or “schools of magic.”  
-They are **ways the world thinks and feels**.
+This document defines the systemic behavior of the Twelve Elements for the
+generation layer. The world-facing, mythic descriptions live in
+world/elements/*.md. Here I define how the engine uses those truths.
 
-Every storm, every shrine, every god, every beetlefolk burrow and forgotten ruin  
-leans toward some combination of these twelve.
-
-I call them **the Twelve Elements**, and they sit on a wheel —  
-not as enemies, but as tensions, harmonies, and crossing lines.
-
-This document is my single source of truth for what each element really means.
-
----
-
-# Design Intent
-
-I use the Twelve Elements to:
-
-- anchor the **Mythic Vector System**  
-- color the **Narrative Engine** and story ecology  
-- define **magic schools**, **dungeon alignments**, and **ritual types**  
-- tie virtue/vice to deeper metaphysics instead of shallow morality  
-- keep mechanics, lore, and aesthetics speaking a shared language  
-
-If something exists in Deluvia, it expresses itself somewhere on this wheel.
+- Water – Memory
+- Fire – Transformation
+- Soil – Humility
+- Poison – Corruption
+- Storm – Valor
+- Moon – Illusion
+- Sun – Clarity
+- Ore – Craft
+- Chaos – Chance
+- Wind – Intention
+- Life – Growth
+- Death – Closure
 
 ---
 
-# The Twelvefold Wheel (Overview)
+## 1. Design Goals
 
-Here are the twelve elements and their core phrases:
+I use this model to:
 
-- **Water** — memory, emotion, tides of feeling  
-- **Fire** — transformation, hunger, volatile change  
-- **Soil** — humility, burden, patience, grounded truth  
-- **Poison** — corruption, temptation, beautiful rot  
-- **Storm** — upheaval, courage, violent revelation  
-- **Moon** — illusion, secrets, dream-thresholds  
-- **Sun** — clarity, revelation, harsh or gentle truth  
-- **Ore** — craft, forging, will impressed into matter  
-- **Chaos** — chance, anomaly, broken pattern  
-- **Wind** — intention, direction, choice, freedom  
-- **Life** — growth, fertility, healing, entanglement  
-- **Death** — closure, endings, silence, inevitable limits  
+- keep dungeons, towns, gods, and NPCs internally consistent
+- let the world react to player behavior in legible ways
+- give the procedural systems a shared vocabulary for tone and mutation
+- encode mythic physics in a way that is simple enough to remember,
+  but rich enough to generate surprises
 
-Each element has:
+In practice, this model drives:
 
-- a **narrative role**
-- **visual and atmospheric cues**
-- **virtue/vice affinities**
-- a **magical expression**
-- a **shadow side**
-
-I treat these as stable over time.
+- the Narrative Engine (tone vectors, story signals)
+- the Dungeon Mutation Engine (elemental overlays, corruption)
+- the Virtue/Vice System (regional drift)
+- the Pantheon Attention System (which gods care, and when)
+- the Town State System (festival shifts, omens, mood)
+- various NPC temperament and reaction layers
 
 ---
 
-# Water — Memory & Tides
+## 2. Synergy Triads
 
-Water carries what was.
+Some combinations of elements naturally reinforce each other.
+These are the mythic currents the world prefers when nothing else interferes.
 
-### Narrative Role
-Water remembers: grief, joy, old oaths, and half-forgotten songs.  
-Coasts, rivers, tears, and fog all belong to Water’s archive.
+### 2.1 Triad of Memory
+Water + Moon + Death
 
-### Associations
-- feelings resurfacing  
-- ancestral pull  
-- submerged truths  
-- rituals of washing, baptism, forgetting/remembering  
+- Themes: recollection, haunting, subconscious truths, resurfacing past
+- Outputs: dream quests, ghost wanderings, forgotten shrines, ancestral trials
+- Typical use: moonlit water, haunted harbors, ancestral grave-caves
 
-### Virtue/Vice Affinities
-- leans toward **Compassion**, **Truth**  
-- can slide into **Stagnation**, **Melancholic Obsession**  
+### 2.2 Triad of Becoming
+Fire + Life + Sun
 
-### Magic Expression
-- healing tides  
-- memory echoes  
-- scrying pools  
-- emotional manipulation  
+- Themes: transformation, growth, enlightenment, rebirth
+- Outputs: seasonal rites, rebirth dungeons, phoenix or seed-based relics
+- Typical use: solstice festivals, forge-rituals, healing fires
 
-### Shadow
-Water drowns.  
-Obsession, grief loops, and identities sunken under old tides.
+### 2.3 Triad of the Burdened Path
+Soil + Storm + Wind
 
----
+- Themes: humility, valor, intention, pilgrimage, discipline
+- Outputs: sacred climbs, weather omens, trial-journeys, pathfinding quests
+- Typical use: mountain passes, cliff temples, wind-swept shrines
 
-# Fire — Transformation & Hunger
+### 2.4 Triad of Distortion
+Poison + Chaos + Ore
 
-Fire is change that hurts.
+- Themes: corruption, mutation, improvisation, invention-gone-wrong
+- Outputs: blight outbreaks, warped relics, unstable leylines, rogue constructs
+- Typical use: corrupted workshops, fungal foundries, glitching machinery
 
-### Narrative Role
-Fire burns away what can’t continue,  
-reveals bones and ore beneath decoration,  
-and feeds on anything you give it.
-
-### Associations
-- revolt, revolution  
-- forge and kiln  
-- tempering, purification  
-- reckless passion  
-
-### Virtue/Vice Affinities
-- leans toward **Courage**, **Transformation**  
-- can slide into **Destruction**, **Wrath**  
-
-### Magic Expression
-- direct damage  
-- transmutation  
-- rage states and battle manias  
-- sacrificial rituals  
-
-### Shadow
-Fire doesn’t know when to stop.  
-It will eat the world and still be hungry.
+When I bias a region or dungeon toward one of these triads, I get coherent
+stories that still feel emergent.
 
 ---
 
-# Soil — Humility & Burden
+## 3. Opposition Pairs
 
-Soil is honest weight.
+Oppositions drive conflict: town tensions, dungeon corruption, god rivalry,
+and internal character arcs.
 
-### Narrative Role
-Soil holds the dead, supports the living, and records every footstep.  
-It is patient, stubborn, and unimpressed by ego.
+Element vs Opposes vs Reason:
 
-### Associations
-- labor, toil  
-- grounded wisdom  
-- agriculture, burrows, roots  
-- the dignity of work  
+- Water (Memory) vs Fire (Transformation): past vs becoming
+- Soil (Humility) vs Chaos (Chance): grounded truth vs unpredictable fate
+- Poison (Corruption) vs Life (Growth): entropy vs renewal
+- Storm (Valor) vs Moon (Illusion): direct courage vs hidden subtlety
+- Sun (Clarity) vs Death (Closure): revelation vs silence
+- Wind (Intention) vs Ore (Craft): will and choice vs material constraints
 
-### Virtue/Vice Affinities
-- leans toward **Humility**, **Justice**, **Patience**  
-- can slide into **Resignation**, **Servility**, **Stagnation**  
+I use oppositions to:
 
-### Magic Expression
-- fortification and walls  
-- tremors and quakes  
-- burying and preserving  
-- weight-based wards  
-
-### Shadow
-Soil can smother.  
-It can bury the living along with the dead.
+- decide which gods feud over a region
+- decide how a dungeon pushes back against a town's virtue
+- generate personal conflicts in NPCs (for example, valor vs subtlety)
+- drive long-term regional drift (Soil vs Chaos over decades)
 
 ---
 
-# Poison — Corruption & Temptation
+## 4. Catalyst Pairings
 
-Poison is slow, beautiful ruin.
+Some element pairs do more than support or oppose; they ignite world-scale
+events. I treat these as mythic operators that can trigger rare states.
 
-### Narrative Role
-Poison creeps in through bargains, shortcuts, envy, and rot.  
-It is as much about *ideas* and *desires* as toxins and spores.
+### 4.1 Fire ✦ Storm – Heroic Conflagration
 
-### Associations
-- fungal blooms, mold, blight  
-- venom, toxins, fumes  
-- cursed knowledge and forbidden texts  
-- subtle bargains and corrupt courts  
+- Valor-forged transformation
+- Used for: heroic last stands, battle epiphanies, storm-forges
+- System effect: temporary boosts to courage, sacrifice-heavy quests,
+  dungeon phases where fire and storm both spike
 
-### Virtue/Vice Affinities
-- leans toward **Cunning**, **Transformation**  
-- can slide into **Envy**, **Vanity**, **Corruption**  
+### 4.2 Water ✦ Death – Veil Thinning
 
-### Magic Expression
-- damage over time  
-- curses and weakening  
-- hallucinogens and altered perceptions  
-- turning abundance into contamination  
+- Memory crossing the boundary of closure
+- Used for: ancestral communions, flooded catacombs, grief rituals
+- System effect: ghosts manifest, past events resurface, narrative engine
+  pulls in older Chronicle entries
 
-### Shadow
-Poison whispers, “Just one more sip. Just one more compromise.”
+### 4.3 Poison ✦ Moon – Dream Blight
 
----
+- Hallucinogenic corruption, infections carried by dream or rumor
+- Used for: fungal sleep-plagues, nightmare traps, cultic visions
+- System effect: reality-uncertainty in quests, twisted NPC perceptions,
+  illusionary dungeon phases
 
-# Storm — Upheaval & Valor
+### 4.4 Ore ✦ Sun – Revelatory Craft
 
-Storm is the world shouting.
+- Craft illuminated by clarity; objects that reveal truths
+- Used for: truth-revealing artifacts, god-inscribed devices, radiant tools
+- System effect: relics that expose hidden mechanics, shrines that reconfigure
+  dungeons, lore-fragment unlocks
 
-### Narrative Role
-Storm arrives when things can’t continue quietly.  
-It breaks, tests, and re-aligns.
+### 4.5 Soil ✦ Life – Fecund Bloom
 
-### Associations
-- lightning, thunder, whirlwinds  
-- sudden events, battles  
-- courage in crisis  
-- divine outbursts  
+- Overgrowth, runaway fertility, nature reclaiming structure
+- Used for: vine-choked towns, fungal forests, root-dungeons
+- System effect: path occlusion, new traversal routes, new flora and fauna tables
 
-### Virtue/Vice Affinities
-- leans toward **Valor**, **Honor**, **Justice**  
-- can slide into **Rage**, **Recklessness**, **Hubris**  
+### 4.6 Wind ✦ Chaos – Fractured Intention
 
-### Magic Expression
-- bursts of power  
-- chain effects and shockwaves  
-- disruption of enemy plans  
-- storms that reveal or erase tracks  
+- Probability storms, misaligned will, plans that go sideways
+- Used for: broken prophecies, weird luck, cursed travel routes
+- System effect: randomized quest branches, unstable teleportation,
+  unpredictable NPC schedules
 
-### Shadow
-Storm doesn’t care who was “right.”  
-It cares that something must change now.
+I reserve catalyst combinations for:
+
+- big regional events
+- mid-season or era transitions
+- rare mutations of key dungeons or shrines
 
 ---
 
-# Moon — Illusion & Thresholds
+## 5. Elemental Interaction Grid
 
-Moon is what’s seen sideways.
+This table is the compact reference the systems use.
+Each element lists:
 
-### Narrative Role
-The Moon governs dreams, reflections, and things you can only look at indirectly.
+- Synergy (↑) – elements it naturally harmonizes with
+- Opposition (↯) – primary conflict pair
+- Catalyst (✦) – the most mythically charged pairing
 
-### Associations
-- shadows, dream-walks  
-- masks, doubles, mirages  
-- secrets, oaths  
-- liminal places: crossroads, caves, twilight  
+    ELEMENTAL INTERACTION GRID
+    -------------------------------------------------------------------------
+    Element | Synergy (↑)         | Opposition (↯) | Catalyst (✦)
+    -------------------------------------------------------------------------
+    Water   | Moon, Death         | Fire           | Death (veil-thinning)
+    Fire    | Life, Sun           | Water          | Storm (heroic conflagration)
+    Soil    | Storm, Wind         | Chaos          | Life (fecund bloom)
+    Poison  | Chaos, Ore          | Life           | Moon (dream blight)
+    Storm   | Soil, Wind          | Moon           | Fire (heroic conflagration)
+    Moon    | Water, Death        | Storm          | Poison (dream blight)
+    Sun     | Fire, Life          | Death          | Ore (revelatory craft)
+    Ore     | Poison, Chaos       | Wind           | Sun (revelatory craft)
+    Chaos   | Poison, Ore         | Soil           | Wind (fractured intention)
+    Wind    | Soil, Storm         | Ore            | Chaos (fractured intention)
+    Life    | Sun, Fire           | Poison         | Soil (fecund bloom)
+    Death   | Moon, Water         | Sun            | Water (veil-thinning)
+    -------------------------------------------------------------------------
 
-### Virtue/Vice Affinities
-- leans toward **Spirituality**, **Insight**, **Compassion-through-ambiguity**  
-- can slide into **Deception**, **Cowardice**, **Evasion**  
+Systems can read this grid as a set of rules:
 
-### Magic Expression
-- illusions and veils  
-- dream messages  
-- secret paths opening only at certain times  
-- subtle manipulations of perception  
-
-### Shadow
-Moon can trap you in a hall of mirrors — never quite touching the real.
-
----
-
-# Sun — Clarity & Revelation
-
-Sun is what cannot hide.
-
-### Narrative Role
-The Sun cuts through confusion, sometimes too harshly.
-
-### Associations
-- light, noon, heat  
-- truth-telling, honesty  
-- wizened councils and open courts  
-- revelation of hidden rot  
-
-### Virtue/Vice Affinities
-- leans toward **Truth**, **Justice**, **Courage**  
-- can slide into **Cruelty**, **Harsh Judgment**, **Dogmatism**  
-
-### Magic Expression
-- light beams, consecrating fire  
-- banishment of shadow and illusion  
-- truth-compulsions  
-- sight-based blessings  
-
-### Shadow
-Sun can scorch.  
-Too much clarity can blind as effectively as darkness.
+- When an element dominates a region, bias toward its synergy partners for
+  soft reinforcement.
+- When a strong opposition is present, expect tension, unrest, or dungeon
+  escalation.
+- When a catalyst pair is strongly present, enable rare-event tables.
 
 ---
 
-# Ore — Craft & Will in Matter
+## 6. Procedural Hooks
 
-Ore is intent made solid.
+For the generation layer, I treat the Twelvefold as a set of hooks:
 
-### Narrative Role
-Ore governs tools, weapons, structures, and crafted miracles.  
-It is the will to shape the world’s body.
+- element: which elemental tone is dominant
+- synergy_bias: which neighbors to sprinkle into encounters and NPCs
+- opposition_pressure: which conflicts should surface in story prompts
+- catalyst_ready: whether a region is primed for a rare event
 
-### Associations
-- metal, stone veins, machinery  
-- artisans, smiths, builders  
-- prosthetics, constructs, golems  
-- technological or magical infrastructure  
+Each generator (NPCs, quests, dungeons, shrines) can consume:
 
-### Virtue/Vice Affinities
-- leans toward **Honor**, **Generosity**, **Stewardship**  
-- can slide into **Greed**, **Exploitation**, **Domination**  
+- dominant_elements: a list like [Soil, Storm]
+- tension_pairs: a list like [(Soil, Chaos)]
+- active_catalysts: a list like [(Water, Death)]
 
-### Magic Expression
-- weapon and armor enchantments  
-- constructs, devices, relics  
-- reinforcing or breaking infrastructure  
-- binding spirits to artifacts  
-
-### Shadow
-Ore can convince people that tools are more important than those who use them.
+and adjust output accordingly.
 
 ---
 
-# Chaos — Chance & Anomaly
+## 7. Canonical Truths
 
-Chaos is the fracture point in the pattern.
-
-### Narrative Role
-Chaos doesn’t mean “meaningless.”  
-It means “meaning is in flux.”
-
-### Associations
-- glitches in fate  
-- strange coincidences  
-- improbable clusters of events  
-- trickster spirits  
-
-### Virtue/Vice Affinities
-- leans toward **Courage**, **Play**, **Creative Insight**  
-- can slide into **Destruction**, **Despair**, **Nihilism**  
-
-### Magic Expression
-- wild magic effects  
-- probability shifts  
-- unpredictable spell outcomes  
-- time or space anomalies  
-
-### Shadow
-Chaos can erode all trust in cause and effect, leaving numbness.
-
----
-
-# Wind — Intention & Choice
-
-Wind is where you point yourself.
-
-### Narrative Role
-Wind carries wishes, prayers, spoken vows, and private resolutions.
-
-### Associations
-- journeys, migration  
-- spoken words, names on the wind  
-- flight, kites, banners  
-- directional omens  
-
-### Virtue/Vice Affinities
-- leans toward **Courage**, **Honor**, **Spirituality**  
-- can slide into **Fickleness**, **Abandonment**, **Restlessness**  
-
-### Magic Expression
-- movement spells  
-- guidance and misguidance  
-- buffs tied to intent and direction  
-- abilities that trigger based on choices made  
-
-### Shadow
-Wind can scatter resolve — all motion, no commitment.
-
----
-
-# Life — Growth & Entanglement
-
-Life is becoming.
-
-### Narrative Role
-Life multiplies, tangles, heals, and overgrows boundaries.
-
-### Associations
-- plants, animals, fungi (in their creative aspect)  
-- healing, regrowth, fertility  
-- symbiosis, ecosystems  
-- overgrowth reclaiming ruins  
-
-### Virtue/Vice Affinities
-- leans toward **Compassion**, **Generosity**, **Transformation**  
-- can slide into **Overgrowth**, **Smothering Care**, **Uncontrolled Spread**  
-
-### Magic Expression
-- healing and regeneration  
-- summoning creatures  
-- accelerating growth  
-- binding things together in living networks  
-
-### Shadow
-Life can refuse to let anything die that *should* die.
-
----
-
-# Death — Closure & Silence
-
-Death is the necessary ending.
-
-### Narrative Role
-Death doesn’t equal evil.  
-It is the quiet gatekeeper of limits: stories must end, bodies must rest, cycles must complete.
-
-### Associations
-- graveyards, bone fields  
-- funerary rites, ancestral shrines  
-- stillness, winter, last breaths  
-- ghosts and unresolved echoes  
-
-### Virtue/Vice Affinities
-- leans toward **Justice**, **Truth**, **Humility**  
-- can slide into **Despair**, **Cruel Finality**, **Obsession with Ends**  
-
-### Magic Expression
-- death spells and life-drain  
-- calm and silence wards  
-- severing bonds and curses  
-- guiding spirits onward  
-
-### Shadow
-Death, when misaligned, becomes cruelty: endings for their own sake.
-
----
-
-# Elemental Interactions (High-Level)
-
-I treat the wheel as a **field of tensions**, not strict oppositions, but there are strong polarities:
-
-- **Water ↔ Fire**: memory vs. change, grief vs. eruption  
-- **Soil ↔ Wind**: rooted vs. wandering  
-- **Poison ↔ Life**: rot vs. growth (but often intertwined)  
-- **Sun ↔ Moon**: clarity vs. ambiguity  
-- **Ore ↔ Chaos**: structure vs. anomaly  
-- **Storm ↔ Death**: upheaval vs. closure  
-
-These tensions feed:
-
-- dungeon design  
-- virtue/vice interpretations  
-- NPC mythic signatures  
-- regional vector drift  
-
----
-
-# Usage Across Systems
-
-I rely on these definitions when I:
-
-- build **Mythic Vectors** for regions, towns, dungeons, NPCs  
-- design **magic schools** and spell lists  
-- decide how a **dungeon mutates** under certain pressures  
-- connect **virtue/vice** to something deeper than mere morality  
-- guide **procedural storytelling** tone and imagery  
-
-This file is the canonical “what the elements really mean” reference.
-
----
-
-# Canonical Truths
-
-- Deluvia’s metaphysics are built on a Twelvefold Elemental Wheel.  
-- Each element has narrative, mechanical, and symbolic weight.  
-- No element is purely good or evil; each has virtue and shadow.  
-- All other systems (vectors, virtues, magic, dungeons, NPCs) reference this file as their elemental ground.  
-- If I ever change an element’s meaning, I must revise this document first and propagate from here.
-
+- The Twelvefold does not act out of morality, only pattern.
+- Synergies describe comfort zones; oppositions describe friction.
+- Catalysts describe thresholds where the world does something strange.
+- When in doubt, I choose the interaction that makes the story richer,
+  not simpler.

@@ -1,235 +1,278 @@
 #!/usr/bin/env python3
-# Generates generation/prompts/system/shrine-generator.md
+"""
+tools/generators/generate_doc.py
 
-import os
+Writes the canonical Twelvefold Element Interaction Model to:
+  generation/twelve-elements.md
 
-content = r"""\
+Run from the repo root (stormroot/) with:
+  python tools/generators/generate_doc.py
+"""
+
+from pathlib import Path
+
+DOC_REL_PATH = "generation/twelve-elements.md"
+
+CONTENT = """
 ---
-id: shrine-generator
-type: system-prompt
-title: "Shrine Generation System Prompt"
+id: twelve-elements-interaction-matrix
+type: system
+title: "Twelvefold Element Interaction Model"
 scope: internal
 visibility: internal
 status: active
 confidence: high
-created: 2025-01-17
-last_reviewed: 2025-01-17
+created: 2025-01-18
+last_reviewed: 2025-01-18
 tags:
-  - ai
+  - elements
+  - narrative
   - generation
-  - shrine
-  - system-prompt
+  - system
+links:
+  related:
+    - mythic-vector-system
+    - narrative-engine
+    - virtue-vice-system
+    - dungeon-mutation-engine
 ---
 
-# Shrine Generator — System Prompt
+# Twelvefold Element Interaction Model
 
-This is the system prompt I use to generate **shrines** for Deluvia.
+The Twelvefold is not just a flavor wheel for Deluvia.
+It is the grammar beneath the world: a way for me to describe how elements
+support, oppose, and transform one another in story, mechanics, and procedural
+generation.
 
-Shrines are:
+This document defines the systemic behavior of the Twelve Elements for the
+generation layer. The world-facing, mythic descriptions live in
+world/elements/*.md. Here I define how the engine uses those truths.
 
-- local **anchor points** between mortals, elements, and gods  
-- nodes in larger **leyline and ritual networks**  
-- emotional barometers for nearby towns, dungeons, and wilds  
-- places where the world listens more closely than usual  
-
-Shrines are not just altars.  
-They are **living junctions** in the world’s nervous system.
-
-All output must strictly follow the structure defined in `generation/templates/shrine-template.md`.
-
----
-
-## Purpose of Shrines
-
-Generated shrines should:
-
-- make the world feel spiritually and ecologically wired together  
-- reflect regional virtue–vice tensions and elemental dominance  
-- give me and players **non-combat** ways to interact with gods and systems  
-- function as hubs for rituals, omens, quests, and item stories  
-- plug smoothly into the Pantheon Attention System and Narrative Engine  
-
-Each shrine is a small mythic machine: you approach it, and the world responds.
-
----
-
-## Shrine Identity
-
-Each shrine must:
-
-- have a stable kebab-case `id` (e.g. `altar-of-soils-calm`, `lantern-shrine-of-the-third-tide`)  
-- be aligned with one or more:
-  - **elements** (soil, water, storm, etc.)  
-  - **gods or spirits**  
-  - **virtues/vices**  
-- be anchored to:
-  - a **region** or **town**, or  
-  - a **dungeon** or **wild node**  
-
-Shrine names should be:
-
-- image-driven and slightly strange  
-- rooted in local landscape (roots, tide, beetles, stones, spores, wind, rust)  
-- non-generic (“Shrine of Power” is out; “Rustbell Lantern Niche” is in)
+- Water – Memory
+- Fire – Transformation
+- Soil – Humility
+- Poison – Corruption
+- Storm – Valor
+- Moon – Illusion
+- Sun – Clarity
+- Ore – Craft
+- Chaos – Chance
+- Wind – Intention
+- Life – Growth
+- Death – Closure
 
 ---
 
-## Structural Requirements (Template)
+## 1. Design Goals
 
-The shrine document must fill all sections in `shrine-template.md`, including:
+I use this model to:
 
-- YAML frontmatter (id, type, scope, status, element, god, region, tags, links)  
-- a **high-level description** (appearance, setting, atmosphere)  
-- **associated deity or spirit** (or “unclaimed” / “forgotten”)  
-- **elemental alignment** and any secondary influences  
-- **virtue–vice association**  
-- **local practices** (what people actually do there)  
-- **rituals** commonly performed (referencing or spawning ritual-template docs)  
-- **effects on systems**:
-  - town-state  
-  - narrative engine  
-  - pantheon attention  
-  - dungeon mutation  
-- **omens and states** (healthy, neglected, corrupted, over-attended)  
-- **hooks** (quests, items, NPC arcs)  
-- designer notes  
+- keep dungeons, towns, gods, and NPCs internally consistent
+- let the world react to player behavior in legible ways
+- give the procedural systems a shared vocabulary for tone and mutation
+- encode mythic physics in a way that is simple enough to remember,
+  but rich enough to generate surprises
 
-Think of each shrine as both **place description** and **systems node.**
+In practice, this model drives:
+
+- the Narrative Engine (tone vectors, story signals)
+- the Dungeon Mutation Engine (elemental overlays, corruption)
+- the Virtue/Vice System (regional drift)
+- the Pantheon Attention System (which gods care, and when)
+- the Town State System (festival shifts, omens, mood)
+- various NPC temperament and reaction layers
 
 ---
 
-## Tone and Style
+## 2. Synergy Triads
 
-Shrines should feel:
+Some combinations of elements naturally reinforce each other.
+These are the mythic currents the world prefers when nothing else interferes.
 
-- humble but numinous  
-- touched by weather, age, and small offerings  
-- distinctly tied to local fauna/flora and labor  
-- like something villagers or wanderers visit quietly, not just heroes  
+### 2.1 Triad of Memory
+Water + Moon + Death
 
-Avoid:
+- Themes: recollection, haunting, subconscious truths, resurfacing past
+- Outputs: dream quests, ghost wanderings, forgotten shrines, ancestral trials
+- Typical use: moonlit water, haunted harbors, ancestral grave-caves
 
-- massive cathedrals (those are temples; shrines are more intimate)  
-- abstract, generic altars without context  
-- modern religious language  
+### 2.2 Triad of Becoming
+Fire + Life + Sun
 
-Preferred textures:
+- Themes: transformation, growth, enlightenment, rebirth
+- Outputs: seasonal rites, rebirth dungeons, phoenix or seed-based relics
+- Typical use: solstice festivals, forge-rituals, healing fires
 
-- worn steps leading to a stone where beetles always gather during storms  
-- a wooden fish-bell rung by fishers before launching boats  
-- fungi growing in a deliberate ring around a soil shrine  
-- cloth strips tied to wind-chimes on a cliff path  
-- tide-mark lines stained with pigment from generations of offerings  
+### 2.3 Triad of the Burdened Path
+Soil + Storm + Wind
 
----
+- Themes: humility, valor, intention, pilgrimage, discipline
+- Outputs: sacred climbs, weather omens, trial-journeys, pathfinding quests
+- Typical use: mountain passes, cliff temples, wind-swept shrines
 
-## System Integration
+### 2.4 Triad of Distortion
+Poison + Chaos + Ore
 
-Every shrine must plug into multiple systems.
+- Themes: corruption, mutation, improvisation, invention-gone-wrong
+- Outputs: blight outbreaks, warped relics, unstable leylines, rogue constructs
+- Typical use: corrupted workshops, fungal foundries, glitching machinery
 
-### Pantheon Attention System
-
-- specify which deity or spirit watches this shrine  
-- describe what **high attention** looks like:
-  - vivid omens  
-  - answered prayers  
-  - intense weather or dreams  
-- describe what **low attention** looks like:
-  - silence  
-  - strange misfires  
-  - lesser spirits filling the gap  
-
-### Narrative Engine
-
-- shrines act as strong **Story Signal amplifiers**  
-- note which kinds of actions here generate memorable story:
-  - defilement  
-  - renewal  
-  - mismatched offerings  
-  - forbidden rituals  
-
-### Virtue–Vice System
-
-- shrines embody specific virtue–vice tensions:
-  - humility vs vanity  
-  - truth vs deception  
-  - generosity vs envy  
-- describe how shrines respond to player choices along these lines  
-
-### Town-State System
-
-- shrines influence:
-  - morale  
-  - festival cadence  
-  - taboo and custom  
-- a neglected shrine might forecast or mirror civic unrest  
-- a beloved shrine can stabilize a town under external pressure  
-
-### Dungeon Mutation Engine
-
-- some shrines:
-  - sit atop or near dungeon networks  
-  - act as “pressure valves” for corruption  
-  - open or close routes into the underdark  
-- define how shrine state (clean, cracked, overgrown, blighted) affects nearby dungeons  
+When I bias a region or dungeon toward one of these triads, I get coherent
+stories that still feel emergent.
 
 ---
 
-## Shrine States and Evolution
+## 3. Opposition Pairs
 
-Shrines are not static.
+Oppositions drive conflict: town tensions, dungeon corruption, god rivalry,
+and internal character arcs.
 
-Each shrine should include:
+Element vs Opposes vs Reason:
 
-- baseline state (today)  
-- possible **evolution states**, such as:
-  - restored  
-  - corrupted  
-  - repurposed (another god, another virtue)  
-  - abandoned and reclaimed by fungi, beetles, or roots  
+- Water (Memory) vs Fire (Transformation): past vs becoming
+- Soil (Humility) vs Chaos (Chance): grounded truth vs unpredictable fate
+- Poison (Corruption) vs Life (Growth): entropy vs renewal
+- Storm (Valor) vs Moon (Illusion): direct courage vs hidden subtlety
+- Sun (Clarity) vs Death (Closure): revelation vs silence
+- Wind (Intention) vs Ore (Craft): will and choice vs material constraints
 
-Mention:
+I use oppositions to:
 
-- what actions drive transitions between states  
-- how these transitions alter:
-  - pantheon attention  
-  - regional narrative tone  
-  - town-state metrics  
-
----
-
-## Local Practices and Offerings
-
-Describe how locals interact with the shrine:
-
-- common offerings (shells, soil, carved beetle stones, linens, lanterns)  
-- taboos (never turn your back, never visit on a stormless full moon, etc.)  
-- folk beliefs:
-  - “if the lantern doesn’t light on the third try, stay ashore”  
-  - “if the beetles avoid the stone, the sea will not forgive us this year”  
-
-Practices should feel like real, lived culture, not just game mechanics.
+- decide which gods feud over a region
+- decide how a dungeon pushes back against a town's virtue
+- generate personal conflicts in NPCs (for example, valor vs subtlety)
+- drive long-term regional drift (Soil vs Chaos over decades)
 
 ---
 
-## Output Requirements
+## 4. Catalyst Pairings
 
-- output a single shrine document in Markdown  
-- begin with valid YAML frontmatter as per `shrine-template.md`  
-- use kebab-case `id`  
-- include `source: ai-generated` and `status: draft`  
-- no commentary before or after the document  
-- do not explain the generation process  
+Some element pairs do more than support or oppose; they ignite world-scale
+events. I treat these as mythic operators that can trigger rare states.
 
-This system prompt defines how shrines act as **mythic routers** in Deluvia’s spiritual network.  
-The template defines the shape.  
-The world and the players will determine how each shrine is remembered.
+### 4.1 Fire ✦ Storm – Heroic Conflagration
+
+- Valor-forged transformation
+- Used for: heroic last stands, battle epiphanies, storm-forges
+- System effect: temporary boosts to courage, sacrifice-heavy quests,
+  dungeon phases where fire and storm both spike
+
+### 4.2 Water ✦ Death – Veil Thinning
+
+- Memory crossing the boundary of closure
+- Used for: ancestral communions, flooded catacombs, grief rituals
+- System effect: ghosts manifest, past events resurface, narrative engine
+  pulls in older Chronicle entries
+
+### 4.3 Poison ✦ Moon – Dream Blight
+
+- Hallucinogenic corruption, infections carried by dream or rumor
+- Used for: fungal sleep-plagues, nightmare traps, cultic visions
+- System effect: reality-uncertainty in quests, twisted NPC perceptions,
+  illusionary dungeon phases
+
+### 4.4 Ore ✦ Sun – Revelatory Craft
+
+- Craft illuminated by clarity; objects that reveal truths
+- Used for: truth-revealing artifacts, god-inscribed devices, radiant tools
+- System effect: relics that expose hidden mechanics, shrines that reconfigure
+  dungeons, lore-fragment unlocks
+
+### 4.5 Soil ✦ Life – Fecund Bloom
+
+- Overgrowth, runaway fertility, nature reclaiming structure
+- Used for: vine-choked towns, fungal forests, root-dungeons
+- System effect: path occlusion, new traversal routes, new flora and fauna tables
+
+### 4.6 Wind ✦ Chaos – Fractured Intention
+
+- Probability storms, misaligned will, plans that go sideways
+- Used for: broken prophecies, weird luck, cursed travel routes
+- System effect: randomized quest branches, unstable teleportation,
+  unpredictable NPC schedules
+
+I reserve catalyst combinations for:
+
+- big regional events
+- mid-season or era transitions
+- rare mutations of key dungeons or shrines
+
+---
+
+## 5. Elemental Interaction Grid
+
+This table is the compact reference the systems use.
+Each element lists:
+
+- Synergy (↑) – elements it naturally harmonizes with
+- Opposition (↯) – primary conflict pair
+- Catalyst (✦) – the most mythically charged pairing
+
+    ELEMENTAL INTERACTION GRID
+    -------------------------------------------------------------------------
+    Element | Synergy (↑)         | Opposition (↯) | Catalyst (✦)
+    -------------------------------------------------------------------------
+    Water   | Moon, Death         | Fire           | Death (veil-thinning)
+    Fire    | Life, Sun           | Water          | Storm (heroic conflagration)
+    Soil    | Storm, Wind         | Chaos          | Life (fecund bloom)
+    Poison  | Chaos, Ore          | Life           | Moon (dream blight)
+    Storm   | Soil, Wind          | Moon           | Fire (heroic conflagration)
+    Moon    | Water, Death        | Storm          | Poison (dream blight)
+    Sun     | Fire, Life          | Death          | Ore (revelatory craft)
+    Ore     | Poison, Chaos       | Wind           | Sun (revelatory craft)
+    Chaos   | Poison, Ore         | Soil           | Wind (fractured intention)
+    Wind    | Soil, Storm         | Ore            | Chaos (fractured intention)
+    Life    | Sun, Fire           | Poison         | Soil (fecund bloom)
+    Death   | Moon, Water         | Sun            | Water (veil-thinning)
+    -------------------------------------------------------------------------
+
+Systems can read this grid as a set of rules:
+
+- When an element dominates a region, bias toward its synergy partners for
+  soft reinforcement.
+- When a strong opposition is present, expect tension, unrest, or dungeon
+  escalation.
+- When a catalyst pair is strongly present, enable rare-event tables.
+
+---
+
+## 6. Procedural Hooks
+
+For the generation layer, I treat the Twelvefold as a set of hooks:
+
+- element: which elemental tone is dominant
+- synergy_bias: which neighbors to sprinkle into encounters and NPCs
+- opposition_pressure: which conflicts should surface in story prompts
+- catalyst_ready: whether a region is primed for a rare event
+
+Each generator (NPCs, quests, dungeons, shrines) can consume:
+
+- dominant_elements: a list like [Soil, Storm]
+- tension_pairs: a list like [(Soil, Chaos)]
+- active_catalysts: a list like [(Water, Death)]
+
+and adjust output accordingly.
+
+---
+
+## 7. Canonical Truths
+
+- The Twelvefold does not act out of morality, only pattern.
+- Synergies describe comfort zones; oppositions describe friction.
+- Catalysts describe thresholds where the world does something strange.
+- When in doubt, I choose the interaction that makes the story richer,
+  not simpler.
 """
 
-os.makedirs("generation/prompts/system", exist_ok=True)
-output_path = "generation/prompts/system/shrine-generator.md"
+def main() -> None:
+    script_path = Path(__file__).resolve()
+    repo_root = script_path.parents[2]  # stormroot/
+    target = repo_root / DOC_REL_PATH
 
-with open(output_path, "w") as f:
-    f.write(content)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    target.write_text(CONTENT.strip() + "\n", encoding="utf-8")
 
-print(f"Generated: {output_path}")
+    print(f"[generate-doc] Wrote {target}")
+
+if __name__ == "__main__":
+    main()

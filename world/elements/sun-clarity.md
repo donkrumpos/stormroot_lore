@@ -24,6 +24,21 @@ links:
   deity: solkara
   opposite: moon-illusion
   narrative_domain: clarity
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - fire
+    - life
+  opposition:
+    - death
+  catalysts:
+    - ore
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/sun.md
+  dungeon_affinity:
+    - ../dungeons/sun-aligned-dungeons.md
 ---
 
 # Mythic Introduction

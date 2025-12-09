@@ -24,6 +24,21 @@ links:
   deity: myrathe
   opposite: death-closure
   narrative_domain: growth
+relations:
+  wheel: ../twelve-elements.md
+  synergy:
+    - sun
+    - fire
+  opposition:
+    - poison
+  catalysts:
+    - soil
+  system_doc:
+    - ../../generation/twelve-elements-interaction-model.md
+  magic_school:
+    - ../magic/life.md
+  dungeon_affinity:
+    - ../dungeons/life-aligned-dungeons.md
 ---
 
 # Mythic Introduction
